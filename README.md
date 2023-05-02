@@ -16,3 +16,4 @@ Once you have downloaded or cloned the repository, you can open the `index.html`
 If you find any issues or bugs with the website or have any suggestions for improvement, feel free to open an issue or submit a pull request on GitHub.
 
 ## Preview
+![Responsive GYM Website](https://user-images.githubusercontent.com/59678435/235726541-06f86e6f-0363-46e8-8bea-d78f254b6c95.png)
