@@ -1,0 +1,472 @@
+/* -------- Custom Property -------- */
+
+:root {
+
+  /* -------- Colors -------- */
+
+  --rich-black-fogra-29_50: hsl(254, 41%, 12%, 0.5);
+  --rich-black-fogra-29-1: hsl(254, 41%, 12%);
+  --rich-black-fogra-29-2: hsl(210, 50%, 4%);
+  --silver-metallic: hsl(240, 9%, 67%);
+  --coquelicot_20: hsla(263, 98%, 52%, 0.2);
+  --coquelicot_10: hsla(261, 98%, 52%, 0.1);
+  --sonic-silver: hsl(0, 0%, 47%);
+  --cadet-gray: hsl(214, 15%, 62%);
+  --light-gray: hsl(0, 0%, 80%);
+  --coquelicot: hsl(237, 97%, 74%);
+  --gainsboro: hsl(0, 0%, 88%);
+  --white_20: hsla(0, 0%, 100%, 0.2);
+  --white_10: hsla(0, 0%, 100%, 0.1);
+  --black_10: hsla(0, 0%, 0%, 0.1);
+  --white: hsl(0, 0%, 100%);
+  --background-color: hsl(227, 100%, 96%);
+
+  /* -------- Typography -------- */
+
+  --ff-catamaran: 'Catamaran', sans-serif;
+  --ff-rubik: 'Rubik', sans-serif;
+
+  --fs-1: 3.8rem;
+  --fs-2: 3rem;
+  --fs-3: 2.5rem;
+  --fs-4: 2rem;
+  --fs-5: 1.8rem;
+  --fs-6: 1.5rem;
+
+  --fw-900: 900;
+  --fw-800: 800;
+  --fw-700: 700;
+  --fw-500: 500;
+
+  /* -------- Spacing -------- */
+
+  --section-padding: 80px;
+
+  /* -------- Shadow -------- */
+
+  --shadow-1: 0 0 20px var(--black_10);
+  --shadow-2: 0px 10px 24px var(--coquelicot_20);
+
+  /* -------- Border Radius -------- */
+
+  --radius-15: 15px;
+  --radius-13: 13px;
+  --radius-10: 10px;
+
+  /* -------- Transition -------- */
+
+  --transition-1: 0.25s ease;
+  --transition-2: 0.5s ease;
+  --cubic-in: cubic-bezier(0.51, 0.03, 0.64, 0.28);
+  --cubic-out: cubic-bezier(0.33, 0.85, 0.4, 0.96);
+
+}
+
+
+
+
+
+/*-----------------------------------*\
+  #RESET
+\*-----------------------------------*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a,
+img,
+span,
+input,
+button,
+strong,
+ion-icon {
+  display: block;
+}
+
+img {
+  height: auto;
+}
+
+input,
+button {
+  background: none;
+  border: none;
+  font: inherit;
+}
+
+input {
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+ion-icon {
+  pointer-events: none;
+}
+
+address {
+  font-style: normal;
+}
+
+html {
+  font-family: var(--ff-rubik);
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--sonic-silver);
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+:focus-visible {
+  outline-offset: 4px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--coquelicot);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--rich-black-fogra-29-1);
+}
+
+
+
+
+
+/*-----------------------------------*\
+  #REUSED STYLE
+\*-----------------------------------*/
+
+.container {
+  padding-inline: 15px;
+}
+
+.section {
+  padding-block: var(--section-padding);
+}
+
+.bg-dark {
+  background-color: var(--rich-black-fogra-29-1);
+  color: var(--silver-metallic);
+}
+
+.has-bg-image {
+  background-repeat: no-repeat;
+  background-position: top left;
+}
+
+.has-before,
+.has-after {
+  position: relative;
+  z-index: 1;
+}
+
+.has-before::before,
+.has-after::after {
+  content: "";
+  position: absolute;
+}
+
+.h1,
+.h2,
+.h3 {
+  font-family: var(--ff-catamaran);
+  line-height: 1.25;
+}
+
+.h1 {
+  color: var(--white);
+  font-size: var(--fs-1);
+  font-weight: var(--fw-900);
+}
+
+.h2,
+.h3 {
+  color: var(--rich-black-fogra-29-1);
+  font-weight: var(--fw-800);
+}
+
+.h2 {
+  font-size: var(--fs-2);
+}
+
+.h3 {
+  font-size: var(--fs-4);
+}
+
+.section-text {
+  font-size: var(--fs-6);
+}
+
+.btn {
+  max-width: max-content;
+  font-size: var(--fs-6);
+  text-transform: uppercase;
+  font-weight: var(--fw-500);
+  padding: 15px 35px;
+  border-radius: var(--radius-13);
+  transition: var(--transition-1);
+}
+
+.btn-primary {
+  background-color: var(--coquelicot);
+  color: var(--white);
+}
+
+.btn-primary:is(:hover, :focus) {
+  background-color: var(--white);
+  color: var(--coquelicot);
+  box-shadow: var(--shadow-2);
+}
+
+.btn-secondary {
+  background-color: var(--white);
+  color: var(--coquelicot);
+}
+
+.btn-secondary:is(:hover, :focus) {
+  background-color: var(--rich-black-fogra-29-1);
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.circle,
+.abs-img {
+  position: absolute;
+}
+
+.circle {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -56%);
+  width: 100%;
+  z-index: -1;
+  animation: rotate360 15s linear infinite;
+}
+
+@keyframes rotate360 {
+  0% {
+    transform: translate(-50%, -56%) rotate(0);
+  }
+
+  100% {
+    transform: translate(-50%, -56%) rotate(1turn);
+  }
+}
+
+.circle-2 {
+  animation-direction: reverse;
+}
+
+.hero-subtitle,
+.section-subtitle {
+  font-family: var(--ff-catamaran);
+  font-weight: var(--fw-700);
+  text-transform: uppercase;
+  max-width: max-content;
+}
+
+.section-subtitle {
+  background-color: var(--coquelicot_10);
+  color: var(--coquelicot);
+  padding: 8px 20px;
+  border-radius: var(--radius-13);
+}
+
+.section-title {
+  margin-block: 18px 35px;
+}
+
+.btn-link {
+  --color: var(--white);
+
+  color: var(--color);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+  text-transform: uppercase;
+  max-width: max-content;
+  transition: var(--transition-1);
+}
+
+.btn-link::before {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color);
+  transition: var(--transition-1);
+}
+
+.btn-link:is(:hover, :focus) {
+  --color: var(--coquelicot);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.img-holder {
+  aspect-ratio: var(--width) / var(--height);
+  background-color: var(--light-gray);
+  overflow: hidden;
+}
+
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.has-scrollbar {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  padding-block-end: 30px;
+  scroll-snap-type: inline mandatory;
+}
+
+.scrollbar-item {
+  min-width: 100%;
+  scroll-snap-align: start;
+}
+
+.has-scrollbar::-webkit-scrollbar {
+  height: 10px;
+}
+
+.has-scrollbar::-webkit-scrollbar-track,
+.has-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--coquelicot);
+}
+
+.has-scrollbar::-webkit-scrollbar-button {
+  width: calc(25% - 25px);
+}
+
+
+
+
+
+/*-----------------------------------*\
+  #HEADER
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #HERO
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #ABOUT
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #VIDEO
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #CLASS
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #BLOG
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #FOOTER
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #BACK TO TOP
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+\*-----------------------------------*/
+
+
+
+/* -------- Responsive For Larger Than 575px Screen -------- */
+
+
+
+
+
+/* -------- Responsive For Larger Than 768px Screen -------- */
+
+
+
+
+
+/* -------- Responsive For Larger Than 992px Screen -------- */
+
+
+
+
+
+/* -------- Responsive For Larger Than 1200px Screen -------- */
