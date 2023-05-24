@@ -2,7 +2,7 @@
 This is a fully responsive gym website built using HTML, CSS, and JS. The website features a modern and professional design with multiple sections that allow gym owners to showcase their services and attract new clients. This website is perfect for gym owners or fitness enthusiasts who want to create an online presence for their gym.
 
 ## Tutorial
-If you want to learn how to build this website step-by-step, you can follow the tutorial on YouTube ( coming soon ). The tutorial covers everything from setting up the HTML file to adding custom CSS and JavaScript to make the website fully responsive.
+If you want to learn how to build this website step-by-step, you can follow the tutorial on [YouTube](https://youtu.be/D0yhbpJ9CxA). The tutorial covers everything from setting up the HTML file to adding custom CSS and JavaScript to make the website fully responsive.
 
 ## Getting Started
 To get started with this project, you can download the source code from codewithaarzoo.com ( coming soon ) or clone the GitHub repository using the following command:
